@@ -1,0 +1,421 @@
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+ 
+  <title>Кафе для разговоров</title>
+  <meta name="description" content="The HTML5 Herald">
+  <meta name="author" content="SitePoint">
+ 
+  <link rel="stylesheet" href="style.css?v=1.0">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://unpkg.com/element-ui/lib/theme-chalk/index.css">
+</head>
+<body>
+	<header class="first-header">
+		<div class="logo">
+			<img src="https://cdn-icons-png.flaticon.com/512/834/834374.png">
+			<h3>论坛</h3>
+		</div>
+	</header>
+	<header class="second-header">
+		<ul class="cite-menu" id="cite_menu">
+			<li id="rooms_btn" onclick="openSection(1)">
+				<span>Комнаты</span>
+				<div class="line D"></div>
+			</li>
+			<li id="polls_btn" onclick="openSection(2)">
+				<span>Опросы</span>
+				<div class="line hide"></div>
+			</li>
+		</ul>
+		<div class="search-block">
+			<div class="input">
+				<input class="search" placeholder="Искать очень замечательного котика" onclick="search()">
+				<i class="el-icon-search"></i>
+			</div>
+			<div class="search-result hide" id="search_result">
+				<ul>
+					<li>Статическая типизация</li>
+					<li>API для компонента Profiler</li>
+					<li>Проверка типов с помощью PropTypes</li>
+					<li>Интеграция с плагинами, изменяющими DOM</li>
+					<li>Компоненты высшего порядка</li>
+					<li class="text-btn">смотреть другие результаты <i class="el-icon-arrow-right"></i></li>
+				</ul>
+			</div>
+		</div>
+		<div class="profile-block">
+			<div class="flex" style="justify-content: flex-end;">
+				<a href="profile.html"><img src="https://sun1-21.userapi.com/s/v1/ig2/vCxghDIBJypZLwIUoFzV2ealhFDngm7D7-WsZQxMEVP67ifOS1U1JCRi-x06-euROyWOrlG_Ig6B_7zq2j9ntisO.jpg?size=50x50&quality=96&crop=26,1,718,718&ava=1" class="avatar" /></a>
+				<span class="name"><a href="profile.html">Сверкающий Луч </a><i class="el-icon-arrow-down" onclick="showProfileBlock()"></i></span>
+				<i class="el-icon-bell bell" onclick="showNotifications()"></i> 
+			</div>
+			<div class="profile-menu hide" id="profile_menu">
+				<ul>
+					<li><i class="el-icon-setting"></i> <a href="settings.html">Настройки</a></li>
+					<li><i class="el-icon-mobile"></i> Выход</li>
+				</ul>
+			</div>
+			<div class="notifications-block hide" id="notifications_block">
+				<ul>
+					<li>
+						<img src="https://sun1-19.userapi.com/s/v1/if1/o2_Maq7y4F6pWOvYB6vemZRoz8hTizMn4EdsnhRHJaoKXbKCo0A439KHao2L8LtcOOO0U6px.jpg?size=50x50&quality=96&crop=0,0,564,564&ava=1">
+						
+						<p>ответил вам в теме "Осенний марафон": "Мне очень нравится! Надо сохранить..."</p>
+					</li>
+					<li>
+						<img src="https://sun1-19.userapi.com/s/v1/if1/o2_Maq7y4F6pWOvYB6vemZRoz8hTizMn4EdsnhRHJaoKXbKCo0A439KHao2L8LtcOOO0U6px.jpg?size=50x50&quality=96&crop=0,0,564,564&ava=1">
+						
+						<p>оценил ваш ответ "Я думаю, это очень хорошо, ещё бы..."</p>
+					</li>
+					<li>
+						<img src="https://sun1-97.userapi.com/s/v1/ig2/oqsnBDrXODZEUEijS2C52PZ0zIk2xpbKvpmcuzkCwEURQJTroOwuISxKjcXKOX1JiUOJAx2U28HIsBdkdrcwRnb6.jpg?size=50x50&quality=95&crop=8,8,500,500&ava=1">
+						
+						<p>оценил ваш ответ "Мне очень нравится! Надо сохранить..."</p>
+					</li>
+					<li>
+						<img src="https://sun1-28.userapi.com/s/v1/if1/NF3qtVof7MUZsl9eb5lGAVzi2bj_HaN4mS8FpHF83avhaZPd3T2D36_8ZZyNDg2ukeoOgtwv.jpg?size=50x50&quality=96&crop=0,0,200,200&ava=1">
+						
+						<p>ответил вам в теме "Осенний марафон": "Мне очень нравится! Надо сохранить..."</p>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</header>
+	<main>
+		<header class="cite-top container">
+			<div class="col1 carusel" id="carusel">
+				<ul class="carusel-blocks">
+					<li id="slide_1" class="">
+							<a href="room.html">
+						<div class="header-text">
+							<h1>Потемневшего снега лоскут</h1>
+							<p>У стены, за углом, —</p>
+						</div></a>
+						<img src="https://sun9-9.userapi.com/impg/_MhWvlfSS7MAewgcuMDVyEf10MRp52Mizr3IhQ/O7ZcOlbA0Kk.jpg?size=474x842&quality=95&sign=edc64c4c38c786d823b1d78764721052&type=album" class="banner">
+						
+					</li>
+					<li id="slide_2" class="hide">
+						<div class="header-text">
+							<h1>Как обрывок газеты, к земле</h1>
+							<p>Пригвожденный дождем.</p>
+						</div>
+						<img src="https://sun9-56.userapi.com/impg/ICiXcjh2JsrsTeNwCETa9mSlPRfhFRwxRpIGFA/1Au53st6Y00.jpg?size=735x832&quality=95&sign=493cddb286e8578a6b15da0a4aa96150&type=album" class="banner">
+					</li>
+					<li id="slide_3" class="hide">
+						<div class="header-text">
+							<h1>Серой копотью весь испещрен,</h1>
+							<p>Словно шрифтом слепым…</p>
+						</div>
+						<img src="https://sun9-12.userapi.com/impg/5yZ6DFkU-NdLWD_AqaqE0JJLQo758-H-6VomYA/7nnLNvnGtls.jpg?size=661x661&quality=95&sign=2006b6d84c8f5ba3c095a5b5d893538e&type=album" class="banner">
+					</li>
+				</ul>
+				<div class="toggles" id="toggles">
+					<div class="toggle active" id="toggle_1" onclick="toggleSlide(this,1)"></div>
+					<div class="toggle" id="toggle_2" onclick="toggleSlide(this,2)"></div>
+					<div class="toggle" id="toggle_3" onclick="toggleSlide(this,3)"></div>
+				</div>
+			</div>
+			<div class="col2">
+				<div class="info-block">
+					<p>Здравствуйте, дорогие друзья! Соблюдайте, пожалуйста, следующие правила:</p>
+					<ul>
+						<li>Не утверждайте что-либо, если вы в этом не уверены, и, конечно, если это неправда</li>
+						<li>Будьте терпеливы и выжливы, никого не оскорбляйте и не разжигайте ненависть, друзья</li>
+					</ul>
+				</div>
+			</div>
+		</header>
+		<div class="main-rooms" style="padding: 45px 15% 0 15%;">
+			<div class="room">
+				<img src="https://sun9-53.userapi.com/impg/grBBJnZAQbodItsqenoO0C1J6OE3dlNLO2A9sg/KiKmXMeS44E.jpg?size=810x1080&quality=95&sign=0fc92bd9e44bbb0303aa010d51b0d204&type=album">
+				<div class="room-info">
+					<h4>Устаревшие новости дня,</h4> 
+				</div>
+				<div class="shadow-blur"></div>
+			</div>
+			<div class="room">
+				<img src="https://sun9-34.userapi.com/impg/bPPJcYof_40B2qu3wzGnHLMzPY3oVsH29T3YyA/vfeB0SPp6BA.jpg?size=288x512&quality=95&sign=cd7959588f7228155891d7f964525f18&type=album">
+				<div class="room-info">
+					<h4>Что развеялся в дым.</h4> 
+				</div>
+				<div class="shadow-blur"></div>
+			</div>
+			<div class="room">
+				<img src="https://sun9-12.userapi.com/impg/5yZ6DFkU-NdLWD_AqaqE0JJLQo758-H-6VomYA/7nnLNvnGtls.jpg?size=661x661&quality=95&sign=2006b6d84c8f5ba3c095a5b5d893538e&type=album">
+				<div class="room-info">
+					<h4>В моей усталой голове</h4> 
+				</div>
+				<div class="shadow-blur"></div>
+			</div>
+			<div class="room">
+				<img src="https://sun9-42.userapi.com/impg/oF-xpOF7SntQGO6Ftl0g-phvlu43XhfKh-WDZA/xmU3u43wqfw.jpg?size=564x846&quality=95&sign=45685574d891e2394ee9acafd41633a1&type=album">
+				<div class="room-info">
+					<h4>С деревьев опадают листья</h4> 
+				</div>
+				<div class="shadow-blur"></div>
+			</div>
+			<div class="room">
+				<img src="https://sun9-10.userapi.com/impg/wXXTQ7ijqFx0WCPp7x2QZGJbVCLlYJ429GC4WQ/q5xusLlSjWs.jpg?size=810x1080&quality=95&sign=ece559ab89993a9b81153f58c55691b3&type=album">
+				<div class="room-info">
+					<h4>Я буду с снегом на траве</h4> 
+				</div>
+				<div class="shadow-blur"></div>
+			</div>
+			<div class="room">
+				<img src="https://sun9-34.userapi.com/impg/eys1PSK5zq8bvGgL99fQeWO1I9HPe9whdRDbHg/QsukWCBLgRA.jpg?size=684x1024&quality=95&sign=73a477107a9d03cb148600adb392e321&type=album">
+				<div class="room-info">
+					<h4>Ждать снега</h4> 
+				</div>
+				<div class="shadow-blur"></div>
+			</div>
+		</div>
+		<div class="rooms container" id="rooms_section">
+			<div class="block-title">
+				<h3><img src="https://cdn-icons-png.flaticon.com/512/6961/6961057.png" class="small-icon">Комнаты</h3>
+				<div class="add-btn">
+					Добавить
+				</div>
+				<ul class="toggle" id="rooms_toggle">
+					<li class="active" onclick="toggleClick(1,this)">популярное<div class="line"></div></li>
+					<li onclick="toggleClick(2,this)">новое<div class="line hide"></div></li>
+					<li onclick="toggleClick(3,this)">мои<div class="line hide"></div></li>
+					<li onclick="toggleClick(4,this)">закладки<div class="line hide"></div></li>
+				</ul>
+			</div>
+			<div class="all-rooms">
+				<div class="flex">
+					<div class="col1">
+						<div class="tag-search-block">
+							<i class="el-icon-arrow-down icon"></i>
+							<input class="tag-search" placeholder="Выберите тэг" onclick="showTagsList(this)">
+							<div class="search-result hide tags-list">
+								<ul class="selected-tags">
+									<li onclick="selectTag(this,'rooms')">Статическая типизация</li>
+									<li>API для компонента Profiler</li>
+									<li>Проверка типов с помощью PropTypes</li>
+									<li>Интеграция с плагинами, изменяющими DOM</li>
+									<li>Компоненты высшего порядка</li>
+									<li class="text-btn">смотреть другие результаты <i class="el-icon-arrow-right"></i></li>
+								</ul>
+							</div>
+							<ul class="selected-tags" id="selected_tags_rooms">
+								<li>история <i class="el-icon-minus remove-tag"></i></li>
+								<li>игры <i class="el-icon-minus remove-tag"></i></li>
+								<li>API для компонента Profiler <i class="el-icon-minus remove-tag"></i></li>
+							</ul>
+						</div>
+						<div class="border-line"></div>
+						<div class="tags-block">
+							<h3>Частые темы</h3>
+							<ul>
+								<li>И каждый</li>
+								<li>раз, когда</li>
+								<li>порой полночной</li>
+								<li>в таинственный</li>
+								<li>и тихий час</li>
+								<li>урочный</li>
+								<li>снег шелестящий</li>
+								<li>белый снег</li>
+								<li>с небес</li>
+								<li>посыплется на</li>
+								<li>голый, чёрный</li>
+								<li>лес</li>
+							</ul>
+						</div>
+					</div>
+					<div class="col2">
+						<div class="section-search-block">
+							<i class="el-icon-search icon"></i>
+							<input class="section-search" placeholder="Ищем конфеты с тыквой" />
+						</div>
+						<div class="rooms-list" id="rooms_list">
+							<a href="room.html">
+								<div class="room">
+									<img src="https://sun9-14.userapi.com/impg/U3uHMuj1USBR0JNPOMxm4J4L1LU81DCss1yKcQ/P20saB2jnr0.jpg?size=736x516&quality=96&sign=2dd97d2a21af6269763ec0b0cfad7bb8&type=album" class="room-cover">
+									<div class="room-info">
+										<h3>Тайны солнца и луны</h3>
+										<span class="author">maogmao</span>
+										<span class="answers"><i class="el-icon-chat-round"></i> 3</span>
+									</div>
+								</div>
+							</a>
+							<a href="room.html">
+							<div class="room">
+								<img src="https://sun9-3.userapi.com/impg/A6Zh-LKHuI1ggO0_ugnXsVW_Bqq5-Oq5UnRz3w/A8_OjX1xl6U.jpg?size=736x981&quality=96&sign=f602e97f5285a36e98d472054b34a7e9&type=album" class="room-cover">
+								<div class="room-info">
+									<h3>Рассказ об обновлении</h3>
+									<span class="author">maks43595 </span>
+									<span class="answers"><i class="el-icon-chat-round"></i> 5</span>
+								</div>
+							</div></a>
+							<a href="room.html">
+							<div class="room">
+								<img src="https://sun9-46.userapi.com/impg/uaM34S9blmAMZ8_0rvST8m1vKvlklMVd169ZQg/iCNP7xNgDmA.jpg?size=736x490&quality=95&sign=38390f05019ae5b644a71394073c1b47&type=album" class="room-cover">
+								<div class="room-info">
+									<h3>Осенний марафон</h3>
+									<span class="author">maks43595 </span>
+									<span class="answers"><i class="el-icon-chat-round"></i> 5210</span>
+								</div>
+							</div></a>
+							<a href="room.html">
+							<div class="room">
+								<img src="https://sun9-64.userapi.com/impg/mt4BNEdDZqJ1ww1z58EK7yGhNfgZtIVAck1Izg/565jcxC0bPY.jpg?size=736x972&quality=96&sign=b8033d71359b8d93d385576820e8f04c&type=album" class="room-cover">
+								<div class="room-info">
+									<h3>Итоги Третьей Книги наставлений</h3>
+									<span class="author">maogmao</span>
+									<span class="answers"><i class="el-icon-chat-round"></i> 50</span>
+								</div>
+							</div>
+							</a>
+							<a href="room.html">
+							<div class="room">
+								<img src="https://operator.cdn.gmru.net/ms/b9651297fe9d6bfbf24077866dee12fc.png" class="room-cover">
+								<div class="room-info">
+									<h3>Фестиваль желаний</h3>
+									<span class="author">maogmao</span>
+									<span class="answers"><i class="el-icon-chat-round"></i> 3</span>
+								</div>
+							</div></a>
+							<a href="room.html">
+							<div class="room">
+								<img src="https://operator.cdn.gmru.net/ms/917d830f4161ee1181b225a0707d5034.png" class="room-cover">
+								<div class="room-info">
+									<h3>Рассказ об обновлении</h3>
+									<span class="author">maogmao</span>
+									<span class="answers"><i class="el-icon-chat-round"></i> 5</span>
+								</div>
+							</div></a>
+							<a href="room.html">
+							<div class="room">
+								<img src="https://sun9-37.userapi.com/impg/3v5_GkmpB3dx7b42a1L7n8gEWu703_bFFZpR5A/VcCPQfuON94.jpg?size=735x490&quality=96&sign=e55354dcaa26a18d6ce75c5ac8300bcb&type=album" class="room-cover">
+								
+								<div class="room-info">
+									<h3>Посмотрите на одного</h3>
+									<span class="author">sverkauisij luch</span>
+									<span class="answers">50 <i class="el-icon-chat-round"></i></span>
+								</div>
+							</div></a>
+							<a href="room.html">
+							<div class="room">
+								<img src="https://dota2.ru/img/forum/avatars/default/avatar_l.png?1599857385" class="room-cover">
+								<div class="room-info">
+									<h3>«Ларец небожителя» в</h3>
+									<span class="author">maogmao</span>
+									<span class="answers"><i class="el-icon-chat-round"></i> 100</span>
+								</div>
+							</div></a>
+							<a href="room.html">
+							<div class="room">
+								<img src="https://sun9-3.userapi.com/impg/A6Zh-LKHuI1ggO0_ugnXsVW_Bqq5-Oq5UnRz3w/A8_OjX1xl6U.jpg?size=736x981&quality=96&sign=f602e97f5285a36e98d472054b34a7e9&type=album" class="room-cover">
+								<div class="room-info">
+									<h3>Итоги Третьей Книги наставлений</h3>
+									<span class="author">maogmao</span>
+									<span class="answers"><i class="el-icon-chat-round"></i> 5</span>
+								</div>
+							</div></a>
+						</div>
+						<footer>
+							<div class="add-btn btn">Ещё комнаты</div>
+						</footer>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="opros" id="polls_section">
+			<div class="block-title" style="width: 70%;margin: 0px 15% 10px 15%;">
+				<h3><img src="https://cdn-icons-png.flaticon.com/512/6961/6961057.png" class="small-icon">Опросы
+				</h3>
+			</div>
+			<div class="flex container">
+				<div class="col1">
+					<div class="block-title">
+						<h4>Выбрать опрос</h4>
+						<div class="add-btn">Добавить</div>
+						<ul class="toggle">
+							<li class="active">популярное <i class="el-icon-arrow-down"></i></li>
+							<li class="saves">избранное</li>
+						</ul>
+					</div>
+					<div class="tag-search-block">
+						<i class="el-icon-arrow-down icon"></i>
+						<input class="tag-search" placeholder="Выберите тэг" onclick="showTagsList(this)">
+						<div class="search-result tags-list hide">
+							<ul class="selected-tags">
+								<li onclick="selectTag(this,'polls')">Статическая типизация</li>
+								<li>API для компонента Profiler</li>
+								<li>Проверка типов с помощью PropTypes</li>
+								<li>Интеграция с плагинами, изменяющими DOM</li>
+								<li>Компоненты высшего порядка</li>
+								<li class="text-btn">смотреть другие результаты <i class="el-icon-arrow-right"></i></li>
+							</ul>
+						</div>
+						<ul class="selected-tags" id="selected_tags_polls">
+							<li>история <i class="el-icon-minus remove-tag"></i></li>
+							<li>игры <i class="el-icon-minus remove-tag"></i></li>
+							<li>API для компонента Profiler <i class="el-icon-minus remove-tag"></i></li>
+						</ul>
+					</div>	
+					<div class="border-line"></div>
+					<input placeholder="Поиск" class="tag-search search">
+					
+					<div class="list">
+						<ul class="themes">
+							<li class="active">
+								<h3>Кто сказал "мяу"?</h3>
+							</li>
+							<li>
+								<h3>Если небо есть повсюду, что тогда еще мне нужно?</h3>
+							</li>
+							<li>
+								<h3>проективный вопрос</h3>
+							</li>
+							<li>
+								<h3>Изумрудный их цвет постепенно</h3>
+							</li>
+							<li>
+								<h3>становится желтым, Ярким цветом</h3>
+							</li>
+							<li>
+								<h3>горят они и пламенеют на солнце.</h3>
+							</li>
+							<li>
+								<h3>Гораздо чаще речь идет о споре</h3>
+							</li>
+							<li>
+								<h3>Добра с добром, а не добра и зла</h3>
+							</li>
+						</ul>
+					</div>
+				</div>
+				<div class="col2">
+					<div class="test">
+						<span class="author">Russian Field</span>
+						<div class="savebtn"><i class="el-icon-collection-tag"></i></div>
+						<header>
+							<h3>Кто сказал "мяу"?</h3>
+						</header>
+						<p>Выберите один ответ</p>
+						<ul id="poll_vars">
+							<li data-id="1"><div class="progress hide"></div>Петух</li>
+							<li class="active" data-id="2"><div class="progress hide"></div>Мышонок</li>
+							<li class="active" data-id="2"><div class="progress hide"></div>Кошка</li>
+							<li class="active" data-id="2"><div class="progress hide"></div>Пес</li>
+							<li class="active" data-id="2"><div class="progress hide"></div>Пчела</li>
+							<li class="active" data-id="2"><div class="progress hide"></div>Лягушка</li>
+						</ul>
+						<footer>
+							<div class="btn" onclick="sendVoice()">Ответить</div>
+							<div class="to-comments"><span>комментарии</span><i class="el-icon-arrow-right"></i></div>
+						</footer>
+						<p>Проголосовали 551 пользователей</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</main>
+  <script src="scripts.js"></script>
+</body>
+</html>

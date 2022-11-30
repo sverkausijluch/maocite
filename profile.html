@@ -1,0 +1,158 @@
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+ 
+  <title>Кафе для разговоров</title>
+  <meta name="description" content="The HTML5 Herald">
+  <meta name="author" content="SitePoint">
+ 
+  <link rel="stylesheet" href="style.css?v=1.0">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://unpkg.com/element-ui/lib/theme-chalk/index.css">
+</head>
+<body style="background: #1a1b20;">
+	<header class="first-header">
+		<div class="logo">
+			<img src="https://cdn-icons-png.flaticon.com/512/834/834374.png">
+			<h3>一间咖啡厅</h3>
+		</div>
+	</header>
+	<header class="second-header">
+		<ul class="cite-menu" id="cite_menu">
+			<li id="rooms_btn" onclick="openSection(1)">
+				<a href="index.html"><span>Комнаты</span></a>
+				<div class="line D"></div>
+			</li>
+			<li id="polls_btn" onclick="openSection(2)">
+				<span>Опросы</span>
+				<div class="line hide"></div>
+			</li>
+		</ul>
+		<div class="search-block">
+			<div class="input">
+				<input class="search" placeholder="Искать очень замечательного котика" onclick="search()">
+				<i class="el-icon-search"></i>
+			</div>
+			<div class="search-result hide" id="search_result">
+				<ul>
+					<li>Статическая типизация</li>
+					<li>API для компонента Profiler</li>
+					<li>Проверка типов с помощью PropTypes</li>
+					<li>Интеграция с плагинами, изменяющими DOM</li>
+					<li>Компоненты высшего порядка</li>
+					<li class="text-btn">смотреть другие результаты <i class="el-icon-arrow-right"></i></li>
+				</ul>
+			</div>
+		</div>
+		<div class="profile-block">
+			<div class="flex" style="justify-content: flex-end;">
+				<a href="profile.html"><img src="https://sun1-21.userapi.com/s/v1/ig2/vCxghDIBJypZLwIUoFzV2ealhFDngm7D7-WsZQxMEVP67ifOS1U1JCRi-x06-euROyWOrlG_Ig6B_7zq2j9ntisO.jpg?size=50x50&quality=96&crop=26,1,718,718&ava=1" class="avatar" /></a>
+				<span class="name"><a href="profile.html">Сверкающий Луч </a><i class="el-icon-arrow-down" onclick="showProfileBlock()"></i></span>
+				<i class="el-icon-bell bell" onclick="showNotifications()"></i> 
+			</div>
+			<div class="profile-menu hide" id="profile_menu">
+				<ul>
+					<a href="index.html"><span>Комнаты</span></a><li><i class="el-icon-setting"></i> Настройки</li>
+					<li><i class="el-icon-mobile"></i> Выход</li>
+				</ul>
+			</div>
+			<div class="notifications-block hide" id="notifications_block">
+				<ul>
+					<li>
+						<img src="https://sun1-19.userapi.com/s/v1/if1/o2_Maq7y4F6pWOvYB6vemZRoz8hTizMn4EdsnhRHJaoKXbKCo0A439KHao2L8LtcOOO0U6px.jpg?size=50x50&quality=96&crop=0,0,564,564&ava=1">
+						<div class="author">Кот на Снежке <span class="date">21 февраля в 16:14</span></div>
+						<p>ответил вам в теме "Посмотрите на этого за...": "Мне очень нравится! Надо сохранить..."</p>
+					</li>
+					<li>
+						<img src="https://sun1-19.userapi.com/s/v1/if1/o2_Maq7y4F6pWOvYB6vemZRoz8hTizMn4EdsnhRHJaoKXbKCo0A439KHao2L8LtcOOO0U6px.jpg?size=50x50&quality=96&crop=0,0,564,564&ava=1">
+						<div class="author">Кот на Снежке <span class="date">21 февраля в 16:14</span></div>
+						<p>оценил ваш ответ "Я думаю, это классно, ещё бы хо..."</p>
+					</li>
+					<li>
+						<img src="https://sun1-97.userapi.com/s/v1/ig2/oqsnBDrXODZEUEijS2C52PZ0zIk2xpbKvpmcuzkCwEURQJTroOwuISxKjcXKOX1JiUOJAx2U28HIsBdkdrcwRnb6.jpg?size=50x50&quality=95&crop=8,8,500,500&ava=1">
+						<div class="author">Радостный Друг <span class="date">21 февраля в 16:14</span></div>
+						<p>оценил ваш ответ "Мне очень нравится! Надо сохранить..."</p>
+					</li>
+					<li>
+						<img src="https://sun1-28.userapi.com/s/v1/if1/NF3qtVof7MUZsl9eb5lGAVzi2bj_HaN4mS8FpHF83avhaZPd3T2D36_8ZZyNDg2ukeoOgtwv.jpg?size=50x50&quality=96&crop=0,0,200,200&ava=1">
+						<div class="author">Фея <span class="date">21 февраля в 16:14</span></div>
+						<p>ответил вам в теме "Посмотрите на этого за...": "Мне очень нравится! Надо сохранить..."</p>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</header>
+	<main class="small-container">
+		<div class="profile-cite">
+			<div class="col1">
+				<div class="profilecard">
+					<img src="https://sun9-21.userapi.com/impg/_0CrrNLvBFCehwRe-m_kDF2FDNcDWU8BKnpV9Q/CBMnSr9Kxzs.jpg?size=819x720&quality=96&sign=f882127d0ecaa92314183c1d1648485a&type=album" class="avatar">
+					<h3>Сверкающий Луч</h3>
+					<p class="anscount">51 ответов на сайте</p>
+					<span class="activnij">активный</span>
+				</div>
+				<ul>
+					<li>
+						<span class="title">почта</span><span class="text">sverkausijluc@gmail.com</span>
+					</li>
+					<li>
+						<span class="title">город</span><span class="text">Зазеркалье</span>
+					</li>
+					<li>
+						<span class="title">любимые книги</span><span class="text">Уличный кот по имени Боб, Властелин колец, Художник... <span class="more">развернуть</span></span>
+					</li>
+					<li>
+						<span class="title">еще варианты пунктов</span><span class="text">и к ним ответы</span>
+					</li>
+				</ul>
+			</div>
+			<div class="col2">
+					<header>
+						<h3>Сообщение</h3>
+					</header>
+				<article class="post">
+					<p>Я пришел к выводу, что я просто теряю время и силы поэтому бросаюиграть ради циферок не вижу смысла, устал от всего и желаю очиститьсяпоэтому удаляю игру от корпарации valve по названием Dota 2</p>
+					<img src="https://sun9-80.userapi.com/impf/ToxWebW2K8tkZTNqIwTcQHwuF75ZTL1StRl6_w/7BH1_AABUXw.jpg?size=722x1080&quality=96&sign=e874d7dd3b53e3081f91bfa4a0e789fc&type=album">
+					
+					
+				</article>
+				<div class="myrooms">
+					<header>
+						<h3>Подписка на темы</h3>
+					</header>
+					<ul> 
+						<li> Как ваше настроение, друзья?<i class="el-icon-arrow-right"></i></li>
+						<li> Рассказ об обновлении: Западные земли и Небо идеала<i class="el-icon-arrow-right"></i></li>
+						<li> «Ларец небожителя» в игровом магазине!<i class="el-icon-arrow-right"></i></li>
+						<li> игру от корпарации valve по названием Dota 2<i class="el-icon-arrow-right"></i></li>
+						<li> Посмотрите на одного замечательного котика<i class="el-icon-arrow-right"></i></li>
+						<li> «Ларец небожителя» в игровом магазине!<i class="el-icon-arrow-right"></i></li>
+						<li> Рассказ об обновлении: Западные земли и Небо идеала<i class="el-icon-arrow-right"></i></li>
+						<li> Посмотрите на одного замечательного котика<i class="el-icon-arrow-right"></i></li>
+						<li> Рассказ об обновлении: Западные земли и Небо идеала<i class="el-icon-arrow-right"></i></li>
+						<li> Посмотрите на одного замечательного котика<i class="el-icon-arrow-right"></i></li>
+						<li> «Ларец небожителя» в игровом магазине!<i class="el-icon-arrow-right"></i></li>
+						<li> Рассказ об обновлении: Западные земли и Небо идеала<i class="el-icon-arrow-right"></i></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</main>
+	<footer class="main-footer">
+		<ul>
+			<li class="footer-logo">
+				<div class="circles">
+					<div class="circleleft"></div>
+					<div class="circleright"></div>
+				</div>
+				<img src="https://cdn-icons-png.flaticon.com/512/834/834374.png" class="logo"> Кафе
+			</li>
+			<li>Помощь</li>
+			<li>Информация</li>
+		</ul>
+	</footer>
+  <script src="js/scripts.js"></script>
+</body>
+</html>

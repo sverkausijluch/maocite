@@ -1,0 +1,252 @@
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+ 
+  <title>Кафе для разговоров</title>
+  <meta name="description" content="The HTML5 Herald">
+  <meta name="author" content="SitePoint">
+ 
+  <link rel="stylesheet" href="style.css?v=1.0">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://unpkg.com/element-ui/lib/theme-chalk/index.css">
+</head>
+<body style="background: #1a1b20;">
+	<header class="first-header">
+		<div class="logo">
+			<img src="https://cdn-icons-png.flaticon.com/512/834/834374.png">
+			<h3>一间咖啡厅</h3>
+		</div>
+	</header>
+	<header class="second-header">
+		<ul class="cite-menu" id="cite_menu">
+			<li id="rooms_btn" onclick="openSection(1)">
+				<span><a href="index.html">Комнаты</a></span>
+				<div class="line D"></div>
+			</li>
+			<li id="polls_btn" onclick="openSection(2)">
+				<span>Опросы</span>
+				<div class="line hide"></div>
+			</li>
+		</ul>
+		<div class="search-block">
+			<div class="input">
+				<input class="search" placeholder="Искать очень замечательного котика" onclick="search()">
+				<i class="el-icon-search"></i>
+			</div>
+			<div class="search-result hide" id="search_result">
+				<ul>
+					<li>Статическая типизация</li>
+					<li>API для компонента Profiler</li>
+					<li>Проверка типов с помощью PropTypes</li>
+					<li>Интеграция с плагинами, изменяющими DOM</li>
+					<li>Компоненты высшего порядка</li>
+					<li class="text-btn">смотреть другие результаты <i class="el-icon-arrow-right"></i></li>
+				</ul>
+			</div>
+		</div>
+		<div class="profile-block">
+			<div class="flex" style="justify-content: flex-end;">
+				<a href="profile.html"><img src="https://sun1-21.userapi.com/s/v1/ig2/vCxghDIBJypZLwIUoFzV2ealhFDngm7D7-WsZQxMEVP67ifOS1U1JCRi-x06-euROyWOrlG_Ig6B_7zq2j9ntisO.jpg?size=50x50&quality=96&crop=26,1,718,718&ava=1" class="avatar" /></a>
+				<span class="name"><a href="profile.html">Сверкающий Луч </a><i class="el-icon-arrow-down" onclick="showProfileBlock()"></i></span>
+				<i class="el-icon-bell bell" onclick="showNotifications()"></i> 
+			</div>
+			<div class="profile-menu hide" id="profile_menu">
+				<ul>
+					<li><i class="el-icon-setting"></i> <a href="settings.html">Настройки</a></li>
+					<li><i class="el-icon-mobile"></i> Выход</li>
+				</ul>
+			</div>
+			<div class="notifications-block hide" id="notifications_block">
+				<ul>
+					<li>
+						<img src="https://sun1-19.userapi.com/s/v1/if1/o2_Maq7y4F6pWOvYB6vemZRoz8hTizMn4EdsnhRHJaoKXbKCo0A439KHao2L8LtcOOO0U6px.jpg?size=50x50&quality=96&crop=0,0,564,564&ava=1">
+						<div class="author">Кот на Снежке <span class="date">21 февраля в 16:14</span></div>
+						<p>ответил вам в теме "Посмотрите на этого за...": "Мне очень нравится! Надо сохранить..."</p>
+					</li>
+					<li>
+						<img src="https://sun1-19.userapi.com/s/v1/if1/o2_Maq7y4F6pWOvYB6vemZRoz8hTizMn4EdsnhRHJaoKXbKCo0A439KHao2L8LtcOOO0U6px.jpg?size=50x50&quality=96&crop=0,0,564,564&ava=1">
+						<div class="author">Кот на Снежке <span class="date">21 февраля в 16:14</span></div>
+						<p>оценил ваш ответ "Я думаю, это классно, ещё бы хо..."</p>
+					</li>
+					<li>
+						<img src="https://sun1-97.userapi.com/s/v1/ig2/oqsnBDrXODZEUEijS2C52PZ0zIk2xpbKvpmcuzkCwEURQJTroOwuISxKjcXKOX1JiUOJAx2U28HIsBdkdrcwRnb6.jpg?size=50x50&quality=95&crop=8,8,500,500&ava=1">
+						<div class="author">Радостный Друг <span class="date">21 февраля в 16:14</span></div>
+						<p>оценил ваш ответ "Мне очень нравится! Надо сохранить..."</p>
+					</li>
+					<li>
+						<img src="https://sun1-28.userapi.com/s/v1/if1/NF3qtVof7MUZsl9eb5lGAVzi2bj_HaN4mS8FpHF83avhaZPd3T2D36_8ZZyNDg2ukeoOgtwv.jpg?size=50x50&quality=96&crop=0,0,200,200&ava=1">
+						<div class="author">Фея <span class="date">21 февраля в 16:14</span></div>
+						<p>ответил вам в теме "Посмотрите на этого за...": "Мне очень нравится! Надо сохранить..."</p>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</header>
+	<main class="small-container">
+		<img src="https://wiki.guildwars2.com/images/7/7a/EoD_screenshot_16.jpg" class="room-cover-img">
+		
+		<div class="room-tags">
+			<div class="tag">игры</div>
+			<div class="tag">Perfect World</div>
+			<div class="tag">обновления pw</div>
+		</div>
+		<header class="room-header">
+			<div class="room-info">
+				<h2>Рассказ об обновлении: Западные земли и Небо идеала</h2>
+				<div class="options"><i class="el-icon-collection-tag"></i>
+					<span>опции темы</span>
+				</div>
+				<header class="answers-header">
+					<span class="filter">сначала новые <i class="el-icon-arrow-down"></i></span>
+					<h3>Ответы</h3>
+				</header>
+			</div>
+		</header>
+		
+		<div class="answers">
+			<div class="answer">
+				<div class="author">
+					<img src="https://sun1-21.userapi.com/s/v1/ig2/vCxghDIBJypZLwIUoFzV2ealhFDngm7D7-WsZQxMEVP67ifOS1U1JCRi-x06-euROyWOrlG_Ig6B_7zq2j9ntisO.jpg?size=50x50&quality=96&crop=26,1,718,718&ava=1">
+					<div class="author-info">
+						<span class="name" style="color: rgb(193, 77, 222);">Хаку</span>
+					</div>
+				</div>
+				<div class="text">
+					<span class="date">28 февраля в 6:46</span>
+					<p>Друзья!
+					</p>
+					<p>Коварная Аида долго металась по Западному континенту. Сбежав на север от Нерушимого города, она пыталась подчинить обитателей Деревень светлячков и бабочек, затем отправилась на восток и вредила уже горожанам Клода, Поллукса и Эквина. Пытаясь избежать поражения, Аида одурманила жителей Никии и окрестностей. Но все тщетно — неумолимое наступление Белой владычицы и героев Идеального Мира не дает ей и шанса. Пора сделать решительный рывок и прекратить эти догонялки!
+					</p>
+					<div class="answer-btns">
+						<span class="otvet">ответить</span> 
+						<span class="like"><i class="el-icon-top"></i> 150</span>
+						<span class="like"><i class="el-icon-bottom"></i> 0</span>
+					</div>
+				</div>
+			</div>
+			<div class="answer">
+				<div class="author">
+					<img src="https://pw.mail.ru/forums/image.php?u=568759&dateline=1333127153">
+					<div class="author-info">
+						<span class="name">blinchik111</span>
+					</div>
+				</div>
+				<div class="text">
+					<span class="date">28 февраля в 6:46</span>
+					<p>Эх, новые пассивки завезли, а фарм фиол крови нет) 150 фиол крови нужно на одну пассивку и 500 запустения)
+Как говорится фармим ХС. Либо китайцы издеваются над игроками, либо китайцам жутко нравится ходить в ХС, который проходится дольше НМИ... (с нормальной пати)
+					</p>
+					<div class="answer-btns">
+						<span class="otvet">ответить</span> 
+						<span class="like"><i class="el-icon-top"></i> 10</span>
+						<span class="like"><i class="el-icon-bottom"></i> 0</span>
+					</div>
+				</div>
+			</div>
+			<div class="answer">
+				<div class="author">
+					<img src="https://dota2.ru/img/forum/avatars/l/832/832438.jpg?1646713115">
+					<div class="author-info">
+						<span class="name" style="color: rgb(193, 77, 222);">u_1225655167</span>
+					</div>
+				</div>
+				<div class="text">
+					<span class="date">28 февраля в 6:46</span>
+					
+					<p>Мммм я так понимаю, нас ждёт новый караван ежедневный, море позитива ))))
+					</p>
+					<div class="answer-btns">
+						<span class="otvet">ответить</span> 
+						<span class="like"><i class="el-icon-top"></i> 150</span>
+						<span class="like"><i class="el-icon-bottom"></i> 0</span>
+					</div>
+				</div>
+			</div>
+			<div class="answer">
+				<div class="author">
+					<img src="https://pw.mail.ru/forums/image.php?u=3019062&dateline=1514129376">
+					<div class="author-info">
+						<span class="name">Jabrano</span>
+					</div>
+				</div>
+				<div class="text">
+					<span class="date">28 февраля в 6:46</span>
+					<p>Небеса, конечно, жутко достали.
+Неинтересный контент. Абсолютно.
+Я понимаю, что вырезать сие из обновы, поставляемой с Китая, нельзя, но ведь можно сделать какой-то буст по дз.
+И да, как будут обстоять дела с бафом на Арктуре после введения нового неба?
+На старых-то серверах бафа нет.
+					</p>
+					<div class="answer-btns">
+						<span class="otvet">ответить</span> 
+						<span class="like"><i class="el-icon-top"></i> 150</span>
+						<span class="like"><i class="el-icon-bottom"></i> 0</span>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="answer-input">
+			<div class="input-header">
+				<ul>
+					<li><i class="el-icon-edit"></i></li>
+					<li><i class="el-icon-tickets"></i></li>
+					<li><i class="el-icon-menu"></i></li>
+					<li><i class="el-icon-folder-opened"></i></li>
+					<li><i class="el-icon-s-fold"></i></li>
+					<li><i class="el-icon-eleme"></i></li>
+					<li><i class="el-icon-eleme"></i></li>
+					<li><img src="https://cdn-icons-png.flaticon.com/512/3953/3953405.png"></li>
+					<li><i class="el-icon-picture-outline-round"></i></li>
+					<li><img src="https://dota2.ru/img/forum/emoticons/HeavyBreathing.png?1619500410"></li>
+					<li><img src="https://cdn-icons-png.flaticon.com/512/774/774832.png"></li>
+					<li><img src="https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/120/lg/307/grinning-face-with-big-eyes_1f603.png"></li>
+				</ul>
+			</div>
+			<div class="textarea-block">
+				<textarea>Введите ответ</textarea>
+				<div class="smiles-block">
+					<ul>
+						<li><img src="https://dota2.ru/img/forum/emoticons/Doge.png?1619500415"></li>
+						<li><img src="https://dota2.ru/img/forum/emoticons/BlobTea.png?1619500979"></li>
+						<li><img src="https://bnetcmsus-a.akamaihd.net/cms/content_entry_media/2KWRXYE4ZA4I1658897849783.png"></li>
+						<li><img src="https://dota2.ru/img/forum/emoticons/CatKiss.gif?1619501230"></li>
+						<li><img src="https://dota2.ru/img/forum/emoticons/Pikachu.png?1619500433"></li>
+						<li><img src="https://bnetcmsus-a.akamaihd.net/cms/content_entry_media/YLZXOX0BWXVE1658897849693.png"></li>
+						<li><img src="https://dota2.ru/img/forum/emoticons/TehePelo.png?1616514229"></li>
+						<li><img src="https://bnetcmsus-a.akamaihd.net/cms/content_entry_media/2KWRXYE4ZA4I1658897849783.png"></li>
+						<li><img src="https://dota2.ru/img/forum/emoticons/CatBlini.png?1619501078"></li>
+						<li><img src="https://bnetcmsus-a.akamaihd.net/cms/content_entry_media/2KWRXYE4ZA4I1658897849783.png"></li>
+						<li><img src="https://dota2.ru/img/forum/emoticons/CatRee.png?1619501008"></li>
+						<li><img src="https://dota2.ru/img/forum/emoticons/CatSad.png?1619501220"></li>
+						<li><img src="https://dota2.ru/img/forum/emoticons/BlobTea.png?1619500979"></li>
+						<li><img src="https://dota2.ru/img/forum/emoticons/CatRee.png?1619501008"></li>
+						<li><img src="https://dota2.ru/img/forum/emoticons/CatSad.png?1619501220"></li>
+						<li><img src="https://dota2.ru/img/forum/emoticons/frankerz.png"></li>
+						<li><img src="https://dota2.ru/img/forum/emoticons/Doge.png?1619500415"></li>
+						<li><img src="https://dota2.ru/img/forum/emoticons/CatYeah.png?1619501053"></li>
+						<li><img src="https://bnetcmsus-a.akamaihd.net/cms/content_entry_media/2KWRXYE4ZA4I1658897849783.png"></li>
+						<li><img src="https://dota2.ru/img/forum/emoticons/TehePelo.png?1616514229"></li>
+					</ul>
+				</div>
+			</div>
+				<div class="send-btn">Отправить</div>
+		</div>
+	</main>
+	<footer class="main-footer">
+		<ul>
+			<li class="footer-logo">
+				<div class="circles">
+					<div class="circleleft"></div>
+					<div class="circleright"></div>
+				</div>
+				<img src="https://cdn-icons-png.flaticon.com/512/834/834374.png" class="logo"> Кафе
+			</li>
+			<li>Помощь</li>
+			<li>Информация</li>
+		</ul>
+	</footer>
+  <script src="js/scripts.js"></script>
+</body>
+</html>
